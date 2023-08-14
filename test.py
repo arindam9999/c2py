@@ -1,20 +1,12 @@
-# TODO Input CCode dir, translation dir
-# TODO run translator.py
-# TODO move to test dir
-# TODO run makefile and then execute main.c
-# TODO run main.py in translated code
-# TODO Compare result.txt and output.txt
-# TODO Return true if working 
-
 """
-Check how to use pytest to make some of these processes simpler,
+TODO Check how to use pytest to make some of these processes simpler,
 probably not of much use in IT, but we can use it in DT, for 
 individual pieces. For individual functions.
 """
 
 import os
 
-test_path = "./test/"
+test_path = "./IT/"
 total_tests = 0
 total_pass = 0
 
