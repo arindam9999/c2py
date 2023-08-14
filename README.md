@@ -30,9 +30,16 @@ Code translation from C to Python Programming Language
 ## Testing
 ```
 python3 test.py
+
+Output:
+TEST 1
+TEST 2
+2 out of 2 tests passed.
+Accuracy is 100.0%.
 ```
 
 ## Requirements
-*Python3
-
-*GCC
+```
+Python3
+GCC
+```
