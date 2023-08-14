@@ -1,8 +1,8 @@
 # TODO Input CCode dir, translation dir
 # TODO run translator.py
+# TODO move to test dir
+# TODO run makefile and then execute main.c
 # TODO run main.py in translated code
-# TODO Input input.txt to the process
-# TODO save results to test/test_no/result.txt file
 # TODO Compare result.txt and output.txt
 # TODO Return true if working 
 
@@ -12,3 +12,57 @@ probably not of much use in IT, but we can use it in DT, for
 individual pieces. For individual functions.
 """
 
+import os
+
+test_path = "./test/"
+total_tests = 0
+total_pass = 0
+
+def compare():
+    fout = open("output.txt", 'r')
+    fres = open("res.txt", 'r')
+
+    text_out = fout.readlines()
+    text_res = fres.readlines()
+
+    if len(text_out) != len(text_res):
+        return False
+    else:
+        for i in range(len(text_out)):
+            if text_out[i] != text_res[i]:
+                print(f"{i+1}th line not same")
+                print(f"{text_out[i], text_res[i]}")
+                print(f"Test Failed")
+                return False
+
+    return True
+
+def run_test(test_no):
+    global total_pass
+    os.chdir(f"./{test_no}")
+    os.system("gcc -Wall -o main CCode/main.c")
+    os.system("./main")
+    os.system("python3 translation/main.py")
+    total_pass += compare()
+    os.system("rm -rf ./main")
+    os.chdir(f"./..")
+
+
+def print_results():
+    global total_pass, total_tests
+    print(f"{total_pass} out of {total_tests} tests passed.\n"
+          f"Accuracy is {(total_pass/total_tests) * 100}%.")
+
+def main():
+    global total_tests
+    os.chdir(f"./{test_path}")
+
+    for f in os.listdir('.'):
+        if os.path.isdir(f):
+            print(f"TEST {f}")
+            total_tests += 1
+            run_test(f)
+    
+    print_results()
+
+main()
