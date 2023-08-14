@@ -33,5 +33,6 @@ python3 test.py
 ```
 
 ## Requirements
-Python3
-GCC
+*Python3
+
+*GCC
