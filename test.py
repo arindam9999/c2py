@@ -34,6 +34,7 @@ def run_test(test_no):
     os.chdir(f"./{test_no}")
     os.system("gcc -Wall -o main CCode/main.c")
     os.system("./main")
+    os.system("python3 ../../translator.py")
     os.system("python3 translation/main.py")
     total_pass += compare()
     os.system("rm -rf ./main")
