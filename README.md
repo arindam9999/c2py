@@ -105,6 +105,7 @@ function declaration
 6. <> X
 7. e1, e2 :operator: e3 (compount expression) X
 8. |, &, ||, &&, ^, <<, >>, ~ (bitwise operators) X
+9. /, //, +, - (Arithmatic) X 
 
 #### Function support
 

@@ -1,13 +1,14 @@
-import sys
+#include <stdio.h>
 
-def main():
-    preprocess()
-    print("Hello, World!")
-    return 0
+void preproces() {
+    freopen("output.txt", "w", stdout);
+    freopen("input.txt", "r", stdin);
+}
 
-def preprocess():
-    sys.stdin = open('input.txt', 'r')
-    sys.stdout = open('res.txt', 'w')
+int main() {
+    preproces();
+   // printf() displays the string inside quotation
+   printf("Hello, World!\n");
+   return 0;
+}
 
-
-main()
