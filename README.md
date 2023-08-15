@@ -29,13 +29,26 @@ Code translation from C to Python Programming Language
 
 ### Testing
 ```
-python3 test.py
+python3 IT.py
 
 Output:
 TEST 1
 TEST 2
 2 out of 2 tests passed.
 Accuracy is 100.0%.
+
+
+pytest UT/test_preprocessing.py 
+
+Output:
+==================================== test session starts =====================================
+platform darwin -- Python 3.9.6, pytest-7.3.1, pluggy-1.0.0
+rootdir: /Users/apple/Desktop/dev/c2py
+collected 1 item                                                                             
+
+UT/test_preprocessing.py .                                                             [100%]
+
+===================================== 1 passed in 0.00s ====================================== 
 ```
 
 ### Requirements
